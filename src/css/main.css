@@ -1,3 +1,16 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+body .container {
+  width: 328px;
+  margin: 0 auto;
+}
+
+body button {
+  font-family: 'Poppins', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,5 +22,77 @@
 
 button {
   cursor: pointer;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+nav {
+  height: 85px;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#2b19a1), to(#6e1a7a));
+  background-image: linear-gradient(to right, #2b19a1, #6e1a7a);
+  position: fixed;
+}
+
+nav .container {
+  position: relative;
+}
+
+nav .container .menu-toggler {
+  height: 25px;
+  width: 25px;
+  background: url("../images/icon-menu-toggler.svg") no-repeat center;
+  background-size: contain;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+
+nav .container .menu-toggler.active {
+  background: url("../images/icon-close.svg") no-repeat center;
+  background-size: contain;
+}
+
+nav #menu {
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 85px;
+}
+
+nav #menu button {
+  margin: 20px 0;
+  padding: 0.75rem 1.75rem;
+  background-color: #2b19a1;
+  border: none;
+  color: white;
+}
+
+nav #menu ul li a {
+  height: 100%;
+  padding: 1rem 0 1rem 4rem;
+  color: white;
+  display: block;
+  position: relative;
+}
+
+nav #menu ul li a span {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 4rem;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+nav #menu ul li a span.active {
+  background: url("../images/icon-yellow-star.svg") no-repeat center;
+  background-size: contain;
 }
 /*# sourceMappingURL=main.css.map */

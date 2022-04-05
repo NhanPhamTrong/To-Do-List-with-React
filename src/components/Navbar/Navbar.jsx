@@ -5,10 +5,8 @@ import Menu from "./Menu";
 function Navbar() {
     return (
         <nav>
-            <div className="container">
-                <MenuToggler />
-                <Menu />
-            </div>
+            <MenuToggler />
+            <Menu />
         </nav>
     );
 }
