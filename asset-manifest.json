@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/To-Do-List-with-React/static/css/main.74e65916.css",
-    "main.js": "/To-Do-List-with-React/static/js/main.e0819db4.js",
+    "main.css": "/To-Do-List-with-React/static/css/main.8a37df45.css",
+    "main.js": "/To-Do-List-with-React/static/js/main.1983862b.js",
     "index.html": "/To-Do-List-with-React/index.html",
+    "static/media/icon-sun.svg": "/To-Do-List-with-React/static/media/icon-sun.618d2bce8539369b315c.svg",
+    "static/media/icon-trash-can.svg": "/To-Do-List-with-React/static/media/icon-trash-can.c457c815b22fc3326c6f.svg",
     "static/media/icon-close.svg": "/To-Do-List-with-React/static/media/icon-close.f71172dab95524e43ba8.svg",
     "static/media/icon-menu-toggler.svg": "/To-Do-List-with-React/static/media/icon-menu-toggler.609697ed4a4c45c95406.svg",
+    "static/media/icon-pen.svg": "/To-Do-List-with-React/static/media/icon-pen.4905ea98107cae9d9deb.svg",
     "static/media/icon-yellow-star.svg": "/To-Do-List-with-React/static/media/icon-yellow-star.d6fcae48d5b46efc204b.svg",
-    "main.74e65916.css.map": "/To-Do-List-with-React/static/css/main.74e65916.css.map",
-    "main.e0819db4.js.map": "/To-Do-List-with-React/static/js/main.e0819db4.js.map"
+    "static/media/icon-white-star.svg": "/To-Do-List-with-React/static/media/icon-white-star.257659aec24cdd254e7c.svg",
+    "static/media/icon-moon.svg": "/To-Do-List-with-React/static/media/icon-moon.c07b54be1130c65c0f57.svg",
+    "static/media/icon-white-plus.svg": "/To-Do-List-with-React/static/media/icon-white-plus.44072c9ef130616dc05b.svg",
+    "main.8a37df45.css.map": "/To-Do-List-with-React/static/css/main.8a37df45.css.map",
+    "main.1983862b.js.map": "/To-Do-List-with-React/static/js/main.1983862b.js.map"
   },
   "entrypoints": [
-    "static/css/main.74e65916.css",
-    "static/js/main.e0819db4.js"
+    "static/css/main.8a37df45.css",
+    "static/js/main.1983862b.js"
   ]
 }
