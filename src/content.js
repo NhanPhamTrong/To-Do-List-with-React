@@ -17,7 +17,7 @@ const content = [
     {
         id: 4,
         listName: "List's name 4",
-        taskList: ["Task 1...", "Task 2...", "Task 3...", "Task 4..."]
+        taskList: ["Task 1... test test test test test test test test test test", "Task 2...", "Task 3...", "Task 4..."]
     }
 ];
 

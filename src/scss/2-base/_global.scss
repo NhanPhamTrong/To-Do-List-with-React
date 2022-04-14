@@ -1,12 +1,46 @@
 body {
+    background-color: $dark-body-background;
     font-family: 'Poppins', sans-serif;
+    font-size: 16px;
 
     .container {
         width: 328px;
         margin: 0 auto;
     }
 
-    button {
+    button, input {
         font-family: 'Poppins', sans-serif;
+    }
+}
+
+body.dark {
+    background-color: $dark-body-background;
+}
+
+body.light {
+    background-color: $dark-body-background;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        .container {
+            width: 576px;
+        }
+    }   
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        .container {
+            width: 704px;
+        }
+    }   
+}
+
+@media only screen and (min-width: 992px) {
+    body {
+        #root {
+            display: flex;
+        }
     }
 }

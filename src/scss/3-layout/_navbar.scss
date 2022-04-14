@@ -1,52 +1,93 @@
-nav {
-    height: 85px;
-    width: 100%;
-    background-image: $navbar-background;
+.menu-toggler {
+    height: 30px;
+    width: 30px;
+    background: url("../images/icon-menu-toggler.svg") no-repeat center;
+    background-size: contain;
+    border: none;
     position: fixed;
+    left: 25px;
+    top: 25px;
+    z-index: 20;
+}
+
+.menu-toggler.active {
+    background: url("../images/icon-close.svg") no-repeat center;
+    background-size: contain;
+}
+
+nav {
+    height: 5rem;
+    width: 100%;
+    background-image: $dark-navbar-background;
+    position: fixed;
+    z-index: 10;
 
     .container {
         position: relative;
 
-        .menu-toggler {
-            height: 25px;
-            width: 25px;
-            background: url("../images/icon-menu-toggler.svg") no-repeat center;
-            background-size: contain;
+        .change-theme {
+            height: 30px;
+            width: 30px;
             border: none;
             position: absolute;
-            left: 0;
-            top: 30px;
+            right: 0;
+            top: 25px;
         }
-    
-        .menu-toggler.active {
-            background: url("../images/icon-close.svg") no-repeat center;
+
+        .change-theme.dark {
+            background: url("../images/icon-sun.svg") no-repeat center;
+            background-size: contain;
+        }
+
+        .change-theme.light {
+            background: url("../images/icon-moon.svg") no-repeat center;
             background-size: contain;
         }
     }
 
     #menu {
-        min-height: 100vh;
+        min-height: auto;
         width: 100%;
-        background-color: $menu-background;
+        padding-top: 1.25rem;
+        background-color: $dark-menu-background;
         position: absolute;
-        left: 0;
-        top: 85px;
+        left: -100%;
+        top: 5rem;
+        transition: 0.4s;
 
-        // .container {
+        .input-list {
+            width: 350px;
+            margin: 0 auto 1.25rem;
+            display: flex;
+
             button {
-                margin: 20px 0;
-                padding: 0.75rem 1.75rem;
-                background-color: $add-list-btn-background;
+                width: 30%;
+                padding: 0.75rem 0;
+                background-color: $dark-add-list-btn-background;
                 border: none;
                 color: $word-color-1;
             }
-        // }
+    
+            button:hover {
+                background-color: transparent;
+                background-image: $dark-add-list-btn-background-hover;
+            }
+    
+            input {
+                width: 70%;
+                padding: 0.75rem 1.75rem;
+                border: none;
+            }
+        }
 
         ul {
+            max-height: 75vh;
+            overflow-y: auto;
+
             li {
                 a {
                     height: 100%;
-                    padding: 1rem 0 1rem 4rem;
+                    padding: 1rem 0 1rem 5rem;
                     color: $word-color-1;
                     display: block;
                     position: relative;
@@ -55,7 +96,7 @@ nav {
                         height: 20px;
                         width: 20px;
                         position: absolute;
-                        right: 4rem;
+                        right: 5rem;
                         top: 50%;
                         transform: translate(0, -50%);
                     }
@@ -66,6 +107,46 @@ nav {
                     }
                 }
             }
+
+            li:hover {
+                background-color: $dark-menu-list-background-hover;
+            }
         }
+    }
+
+    #menu.active {
+        left: 0;
+        transition: 0.4s;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .menu-toggler {
+        position: absolute;
+    }
+
+    nav {
+        width: 400px;
+        left: -100%;
+        transition: 0.4s;
+
+        .container {
+            width: 400px;
+
+            .change-theme {
+                right: 25px;
+            }
+        }
+
+        #menu {
+            width: 400px;
+        }
+    }
+
+    nav.active {
+        width: 400px;
+        position: relative;
+        left: 0;
+        transition: 0.4s;
     }
 }

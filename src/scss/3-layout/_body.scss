@@ -1,0 +1,236 @@
+main {
+    min-height: auto;
+    padding: 5rem 0;
+    color: $word-color-1;
+
+    .list-content {
+        margin-top: 2.5rem;
+        display: none;
+
+        .add-task {
+            margin-bottom: 2.5rem;
+
+            .container {
+                .heading {
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: center;
+
+                    h1 {
+                        margin-right: 1rem;
+                        font-size: 1.25rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .tool {
+                        display: flex;
+                        align-items: center;
+
+                        button {
+                            height: 25px;
+                            width: 25px;
+                            border: none;
+                            border-radius: 5px;
+                        }
+
+                        .bookmark {
+                            background: transparent url("../images/icon-white-star.svg") no-repeat center;
+                            background-size: 70%;
+                        }
+
+                        .bookmark.active {
+                            background: $bookmark-btn-background-active url("../images/icon-white-star.svg") no-repeat center;
+                            background-size: 70%;
+                        }
+
+                        .delete {
+                            margin-left: 0.25rem;
+                            background: $delete-list-btn-background url("../images/icon-trash-can.svg") no-repeat center;
+                            background-size: 50%;
+                        }
+                    }
+                }
+
+                .input-task {
+                    position: relative;
+
+                    button {
+                        height: 100%;
+                        width: 3.5rem;
+                        background: transparent url("../images/icon-white-plus.svg") no-repeat center;
+                        background-size: 50%;
+                        border: none;
+                        border-radius: 5px;
+                        position: absolute;
+                        left: 0;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 1rem 0 1rem 3.5rem;
+                        background-color: $dark-input-background;
+                        border: none;
+                        border-radius: 5px;
+                        color: $word-color-1;
+                        font-size: 1rem;
+                        outline: none;
+                    }
+
+                    input::placeholder {
+                        color: $word-color-1;
+                    }
+                }
+            }
+        }
+
+        .task-section {
+            .container {
+                ul {
+                    li {
+                        min-height: 58px;
+                        background-color: $dark-task-background;
+                        border: $dark-task-border solid 1px;
+                        display: grid;
+                        grid-template-columns: auto 1fr;
+
+                        .checkbox {
+                            grid-column: 1;
+                            height: 100%;
+                            width: 3.5rem;
+                            position: relative;
+                        }
+
+                        .checkbox:before {
+                            content: "";
+                            height: 20px;
+                            width: 20px;
+                            background-color: $dark-checkbox-background;
+                            border: $dark-checkbox-border solid 2px;
+                            border-radius: 100px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        .task-text {
+                            grid-column: 2;
+                            position: relative;
+                            overflow: hidden;
+
+                            p {
+                                padding: 1rem 3.5rem 1rem 0;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+
+                            input {
+                                height: 100%;
+                                width: 100%;
+                                padding: 1rem 0;
+                                background-color: $dark-task-background;
+                                border: none;
+                                color: $word-color-1;
+                                display: none;
+                                font-size: 16px;
+                                outline: none;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                            }
+                        }
+
+                        .task-text.edit {
+                            input {
+                                display: block;
+                            }
+                        }
+
+                        .task-btn {
+                            grid-column: 3;
+                            display: none;
+                            align-items: center;
+
+                            button {
+                                height: 20px;
+                                width: 20px;
+                                margin-right: 1rem;
+                                border: none;
+                            }
+
+                            .update-task {
+                                background: url("../images/icon-pen.svg") no-repeat center;
+                                background-size: contain;
+                            }
+
+                            .delete-task {
+                                background: url("../images/icon-close.svg") no-repeat center;
+                                background-size: contain;
+                            }
+                        }
+                    }
+
+                    li:nth-child(1) {
+                        border-radius: 5px 5px 0 0;
+                    }
+
+                    li:hover {
+                        .checkbox:before {
+                            border: $dark-checkbox-border-hover solid 2px;
+                        }
+
+                        .task-text {
+                            p {
+                                padding-right: 0;
+                                white-space: normal;
+                            }
+                        }
+
+                        .task-btn {
+                            display: flex;
+                        }
+                    }
+
+                    li.complete {
+                        .checkbox:before {
+                            background-color: $dark-checkbox-background-complete;
+                            border: $dark-checkbox-border-hover solid 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .list-content.open {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    main {
+        max-height: 100vh;
+        width: 100%;
+        padding: 5rem 0 0;
+        overflow-y: auto;
+
+        .list-content {
+            margin: 0;
+
+            .add-task {
+                .container {
+                    width: 544px;
+                }
+            }
+
+            .task-section {
+                .container {
+                    width: 544px;
+                }
+            }
+        }
+    }
+}

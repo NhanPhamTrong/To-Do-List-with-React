@@ -1,5 +1,7 @@
 body {
+  background-color: #161622;
   font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 body .container {
@@ -7,8 +9,36 @@ body .container {
   margin: 0 auto;
 }
 
-body button {
+body button, body input {
   font-family: 'Poppins', sans-serif;
+}
+
+body.dark {
+  background-color: #161622;
+}
+
+body.light {
+  background-color: #161622;
+}
+
+@media only screen and (min-width: 600px) {
+  body .container {
+    width: 576px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body .container {
+    width: 704px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body #root {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 * {
@@ -28,54 +58,103 @@ p {
   line-height: 1.5rem;
 }
 
+.menu-toggler {
+  height: 30px;
+  width: 30px;
+  background: url("../images/icon-menu-toggler.svg") no-repeat center;
+  background-size: contain;
+  border: none;
+  position: fixed;
+  left: 25px;
+  top: 25px;
+  z-index: 20;
+}
+
+.menu-toggler.active {
+  background: url("../images/icon-close.svg") no-repeat center;
+  background-size: contain;
+}
+
 nav {
-  height: 85px;
+  height: 5rem;
   width: 100%;
   background-image: -webkit-gradient(linear, left top, right top, from(#2b19a1), to(#6e1a7a));
   background-image: linear-gradient(to right, #2b19a1, #6e1a7a);
   position: fixed;
+  z-index: 10;
 }
 
 nav .container {
   position: relative;
 }
 
-nav .container .menu-toggler {
-  height: 25px;
-  width: 25px;
-  background: url("../images/icon-menu-toggler.svg") no-repeat center;
-  background-size: contain;
+nav .container .change-theme {
+  height: 30px;
+  width: 30px;
   border: none;
   position: absolute;
-  left: 0;
-  top: 30px;
+  right: 0;
+  top: 25px;
 }
 
-nav .container .menu-toggler.active {
-  background: url("../images/icon-close.svg") no-repeat center;
+nav .container .change-theme.dark {
+  background: url("../images/icon-sun.svg") no-repeat center;
+  background-size: contain;
+}
+
+nav .container .change-theme.light {
+  background: url("../images/icon-moon.svg") no-repeat center;
   background-size: contain;
 }
 
 nav #menu {
-  min-height: 100vh;
+  min-height: auto;
   width: 100%;
+  padding-top: 1.25rem;
   background-color: black;
   position: absolute;
-  left: 0;
-  top: 85px;
+  left: -100%;
+  top: 5rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-nav #menu button {
-  margin: 20px 0;
-  padding: 0.75rem 1.75rem;
+nav #menu .input-list {
+  width: 350px;
+  margin: 0 auto 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav #menu .input-list button {
+  width: 30%;
+  padding: 0.75rem 0;
   background-color: #2b19a1;
   border: none;
   color: white;
 }
 
+nav #menu .input-list button:hover {
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, right top, left top, from(#2b19a1), to(#6e1a7a));
+  background-image: linear-gradient(to left, #2b19a1, #6e1a7a);
+}
+
+nav #menu .input-list input {
+  width: 70%;
+  padding: 0.75rem 1.75rem;
+  border: none;
+}
+
+nav #menu ul {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
 nav #menu ul li a {
   height: 100%;
-  padding: 1rem 0 1rem 4rem;
+  padding: 1rem 0 1rem 5rem;
   color: white;
   display: block;
   position: relative;
@@ -85,7 +164,7 @@ nav #menu ul li a span {
   height: 20px;
   width: 20px;
   position: absolute;
-  right: 4rem;
+  right: 5rem;
   top: 50%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
@@ -94,5 +173,287 @@ nav #menu ul li a span {
 nav #menu ul li a span.active {
   background: url("../images/icon-yellow-star.svg") no-repeat center;
   background-size: contain;
+}
+
+nav #menu ul li:hover {
+  background-color: #282828;
+}
+
+nav #menu.active {
+  left: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+@media only screen and (min-width: 992px) {
+  .menu-toggler {
+    position: absolute;
+  }
+  nav {
+    width: 400px;
+    left: -100%;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  nav .container {
+    width: 400px;
+  }
+  nav .container .change-theme {
+    right: 25px;
+  }
+  nav #menu {
+    width: 400px;
+  }
+  nav.active {
+    width: 400px;
+    position: relative;
+    left: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+main {
+  min-height: auto;
+  padding: 5rem 0;
+  color: white;
+}
+
+main .list-content {
+  margin-top: 2.5rem;
+  display: none;
+}
+
+main .list-content .add-task {
+  margin-bottom: 2.5rem;
+}
+
+main .list-content .add-task .container .heading {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .list-content .add-task .container .heading h1 {
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+main .list-content .add-task .container .heading .tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .list-content .add-task .container .heading .tool button {
+  height: 25px;
+  width: 25px;
+  border: none;
+  border-radius: 5px;
+}
+
+main .list-content .add-task .container .heading .tool .bookmark {
+  background: transparent url("../images/icon-white-star.svg") no-repeat center;
+  background-size: 70%;
+}
+
+main .list-content .add-task .container .heading .tool .bookmark.active {
+  background: yellow url("../images/icon-white-star.svg") no-repeat center;
+  background-size: 70%;
+}
+
+main .list-content .add-task .container .heading .tool .delete {
+  margin-left: 0.25rem;
+  background: red url("../images/icon-trash-can.svg") no-repeat center;
+  background-size: 50%;
+}
+
+main .list-content .add-task .container .input-task {
+  position: relative;
+}
+
+main .list-content .add-task .container .input-task button {
+  height: 100%;
+  width: 3.5rem;
+  background: transparent url("../images/icon-white-plus.svg") no-repeat center;
+  background-size: 50%;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+}
+
+main .list-content .add-task .container .input-task input {
+  width: 100%;
+  padding: 1rem 0 1rem 3.5rem;
+  background-color: #23283c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+main .list-content .add-task .container .input-task input::-webkit-input-placeholder {
+  color: white;
+}
+
+main .list-content .add-task .container .input-task input:-ms-input-placeholder {
+  color: white;
+}
+
+main .list-content .add-task .container .input-task input::-ms-input-placeholder {
+  color: white;
+}
+
+main .list-content .add-task .container .input-task input::placeholder {
+  color: white;
+}
+
+main .list-content .task-section .container ul li {
+  min-height: 58px;
+  background-color: #23283c;
+  border: #464646 solid 1px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+}
+
+main .list-content .task-section .container ul li .checkbox {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  height: 100%;
+  width: 3.5rem;
+  position: relative;
+}
+
+main .list-content .task-section .container ul li .checkbox:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: #bebebe;
+  border: #464646 solid 2px;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .list-content .task-section .container ul li .task-text {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+main .list-content .task-section .container ul li .task-text p {
+  padding: 1rem 3.5rem 1rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+main .list-content .task-section .container ul li .task-text input {
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #23283c;
+  border: none;
+  color: white;
+  display: none;
+  font-size: 16px;
+  outline: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+main .list-content .task-section .container ul li .task-text.edit input {
+  display: block;
+}
+
+main .list-content .task-section .container ul li .task-btn {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .list-content .task-section .container ul li .task-btn button {
+  height: 20px;
+  width: 20px;
+  margin-right: 1rem;
+  border: none;
+}
+
+main .list-content .task-section .container ul li .task-btn .update-task {
+  background: url("../images/icon-pen.svg") no-repeat center;
+  background-size: contain;
+}
+
+main .list-content .task-section .container ul li .task-btn .delete-task {
+  background: url("../images/icon-close.svg") no-repeat center;
+  background-size: contain;
+}
+
+main .list-content .task-section .container ul li:nth-child(1) {
+  border-radius: 5px 5px 0 0;
+}
+
+main .list-content .task-section .container ul li:hover .checkbox:before {
+  border: #00f0f0 solid 2px;
+}
+
+main .list-content .task-section .container ul li:hover .task-text p {
+  padding-right: 0;
+  white-space: normal;
+}
+
+main .list-content .task-section .container ul li:hover .task-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .list-content .task-section .container ul li.complete .checkbox:before {
+  background-color: #2b19a1;
+  border: #00f0f0 solid 2px;
+}
+
+main .list-content.open {
+  display: block;
+}
+
+@media only screen and (min-width: 992px) {
+  main {
+    max-height: 100vh;
+    width: 100%;
+    padding: 5rem 0 0;
+    overflow-y: auto;
+  }
+  main .list-content {
+    margin: 0;
+  }
+  main .list-content .add-task .container {
+    width: 544px;
+  }
+  main .list-content .task-section .container {
+    width: 544px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
