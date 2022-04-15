@@ -23,6 +23,7 @@ nav {
     z-index: 10;
 
     .container {
+        width: 100%;
         position: relative;
 
         .change-theme {
@@ -30,7 +31,7 @@ nav {
             width: 30px;
             border: none;
             position: absolute;
-            right: 0;
+            right: 25px;
             top: 25px;
         }
 
@@ -46,7 +47,7 @@ nav {
     }
 
     #menu {
-        min-height: auto;
+        min-height: calc(100vh - 5rem);
         width: 100%;
         padding-top: 1.25rem;
         background-color: $dark-menu-background;
@@ -56,7 +57,7 @@ nav {
         transition: 0.4s;
 
         .input-list {
-            width: 350px;
+            width: 328px;
             margin: 0 auto 1.25rem;
             display: flex;
 
@@ -65,7 +66,6 @@ nav {
                 padding: 0.75rem 0;
                 background-color: $dark-add-list-btn-background;
                 border: none;
-                color: $word-color-1;
             }
     
             button:hover {
@@ -77,6 +77,8 @@ nav {
                 width: 70%;
                 padding: 0.75rem 1.75rem;
                 border: none;
+                color: $dark-word-color-2 !important;
+                outline: none;
             }
         }
 
@@ -88,7 +90,7 @@ nav {
                 a {
                     height: 100%;
                     padding: 1rem 0 1rem 5rem;
-                    color: $word-color-1;
+                    color: $dark-word-color-1;
                     display: block;
                     position: relative;
 

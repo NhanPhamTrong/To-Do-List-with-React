@@ -4,7 +4,7 @@ import ListContent from "./Body/ListContent";
 import InputList from "./Navbar/InputList";
 
 function App() {
-    const [active, setActive] = useState("");
+    const [active, setActive] = useState("active");
     const [bookmark, setBookmark] = useState([]);
     const [theme, setTheme] = useState("dark");
 
@@ -45,8 +45,8 @@ function App() {
     }
 
     function GetList(e) {
-        e.preventDefault();
         const listOrder = e.target.getAttribute("order");
+        e.preventDefault();
         for (let i = 0; i < list.openList.length; i++) {
             list.openList[i] = i === parseInt(listOrder) ? "open" : "";
         }

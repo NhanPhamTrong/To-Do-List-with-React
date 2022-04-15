@@ -1,15 +1,12 @@
 main {
     min-height: auto;
-    padding: 5rem 0;
-    color: $word-color-1;
+    padding: 7.5rem 0;
+    color: $dark-word-color-1;
 
     .list-content {
-        margin-top: 2.5rem;
         display: none;
 
         .add-task {
-            margin-bottom: 2.5rem;
-
             .container {
                 .heading {
                     margin-bottom: 1rem;
@@ -73,19 +70,20 @@ main {
                         background-color: $dark-input-background;
                         border: none;
                         border-radius: 5px;
-                        color: $word-color-1;
                         font-size: 1rem;
                         outline: none;
                     }
 
                     input::placeholder {
-                        color: $word-color-1;
+                        color: $dark-word-color-1;
                     }
                 }
             }
         }
 
         .task-section {
+            margin: 2.5rem 0;
+
             .container {
                 ul {
                     li {
@@ -133,7 +131,6 @@ main {
                                 padding: 1rem 0;
                                 background-color: $dark-task-background;
                                 border: none;
-                                color: $word-color-1;
                                 display: none;
                                 font-size: 16px;
                                 outline: none;
@@ -194,12 +191,42 @@ main {
                         }
                     }
 
-                    li.complete {
+                    li.completed {
                         .checkbox:before {
                             background-color: $dark-checkbox-background-complete;
                             border: $dark-checkbox-border-hover solid 2px;
                         }
                     }
+                }
+            }
+        }
+
+        .list-statistic {
+            .container {
+                padding: 1rem 2rem;
+                background-color: $dark-statistic-background;
+                border: $dark-statistic-border solid 1px;
+                border-radius: 0 0 5px 5px;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                }
+
+                button:hover, button.active {
+                    color: $dark-sort-btn;
+                }
+
+                .sort {
+                    width: 16rem;
+                    margin: 0 auto 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                }
+    
+                .count-and-clear {
+                    display: flex;
+                    justify-content: space-between;
                 }
             }
         }
@@ -214,22 +241,11 @@ main {
     main {
         max-height: 100vh;
         width: 100%;
-        padding: 5rem 0 0;
         overflow-y: auto;
 
         .list-content {
-            margin: 0;
-
-            .add-task {
-                .container {
-                    width: 544px;
-                }
-            }
-
-            .task-section {
-                .container {
-                    width: 544px;
-                }
+            .container {
+                width: 544px;
             }
         }
     }

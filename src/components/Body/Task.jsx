@@ -67,14 +67,15 @@ function Task(props) {
         })
     }
 
-    function CheckComplete(e) {
-        // if (e.target.tagName !== "BUTTON" && e.target.tagName !== "INPUT") {
-        //     e.target.closest("li").classList.toggle("complete");
-        // }
+    function CheckCompleted(e) {
+        if (e.target.tagName !== "BUTTON" && e.target.tagName !== "INPUT") {
+            e.target.closest("li").classList.toggle("completed");
+            props.onCheckCompleted(props.id);
+        }
     }
 
     return (
-        <li onClick={CheckComplete}>
+        <li className={props.completed} style={{display: props.display}} onClick={CheckCompleted}>
             <div className="checkbox"></div>
             <div className={"task-text " + edit.editable}>
                 <p>{props.task}</p>

@@ -10,6 +10,7 @@ body .container {
 }
 
 body button, body input {
+  color: white;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -85,6 +86,7 @@ nav {
 }
 
 nav .container {
+  width: 100%;
   position: relative;
 }
 
@@ -93,7 +95,7 @@ nav .container .change-theme {
   width: 30px;
   border: none;
   position: absolute;
-  right: 0;
+  right: 25px;
   top: 25px;
 }
 
@@ -108,7 +110,7 @@ nav .container .change-theme.light {
 }
 
 nav #menu {
-  min-height: auto;
+  min-height: calc(100vh - 5rem);
   width: 100%;
   padding-top: 1.25rem;
   background-color: black;
@@ -120,7 +122,7 @@ nav #menu {
 }
 
 nav #menu .input-list {
-  width: 350px;
+  width: 328px;
   margin: 0 auto 1.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -132,7 +134,6 @@ nav #menu .input-list button {
   padding: 0.75rem 0;
   background-color: #2b19a1;
   border: none;
-  color: white;
 }
 
 nav #menu .input-list button:hover {
@@ -145,6 +146,8 @@ nav #menu .input-list input {
   width: 70%;
   padding: 0.75rem 1.75rem;
   border: none;
+  color: black !important;
+  outline: none;
 }
 
 nav #menu ul {
@@ -215,17 +218,12 @@ nav #menu.active {
 
 main {
   min-height: auto;
-  padding: 5rem 0;
+  padding: 7.5rem 0;
   color: white;
 }
 
 main .list-content {
-  margin-top: 2.5rem;
   display: none;
-}
-
-main .list-content .add-task {
-  margin-bottom: 2.5rem;
 }
 
 main .list-content .add-task .container .heading {
@@ -299,7 +297,6 @@ main .list-content .add-task .container .input-task input {
   background-color: #23283c;
   border: none;
   border-radius: 5px;
-  color: white;
   font-size: 1rem;
   outline: none;
 }
@@ -318,6 +315,10 @@ main .list-content .add-task .container .input-task input::-ms-input-placeholder
 
 main .list-content .add-task .container .input-task input::placeholder {
   color: white;
+}
+
+main .list-content .task-section {
+  margin: 2.5rem 0;
 }
 
 main .list-content .task-section .container ul li {
@@ -372,7 +373,6 @@ main .list-content .task-section .container ul li .task-text input {
   padding: 1rem 0;
   background-color: #23283c;
   border: none;
-  color: white;
   display: none;
   font-size: 16px;
   outline: none;
@@ -430,9 +430,45 @@ main .list-content .task-section .container ul li:hover .task-btn {
   display: flex;
 }
 
-main .list-content .task-section .container ul li.complete .checkbox:before {
+main .list-content .task-section .container ul li.completed .checkbox:before {
   background-color: #2b19a1;
   border: #00f0f0 solid 2px;
+}
+
+main .list-content .list-statistic .container {
+  padding: 1rem 2rem;
+  background-color: #23283c;
+  border: #464646 solid 1px;
+  border-radius: 0 0 5px 5px;
+}
+
+main .list-content .list-statistic .container button {
+  background-color: transparent;
+  border: none;
+}
+
+main .list-content .list-statistic .container button:hover, main .list-content .list-statistic .container button.active {
+  color: #00f0f0;
+}
+
+main .list-content .list-statistic .container .sort {
+  width: 16rem;
+  margin: 0 auto 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .list-content .list-statistic .container .count-and-clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main .list-content.open {
@@ -443,16 +479,9 @@ main .list-content.open {
   main {
     max-height: 100vh;
     width: 100%;
-    padding: 5rem 0 0;
     overflow-y: auto;
   }
-  main .list-content {
-    margin: 0;
-  }
-  main .list-content .add-task .container {
-    width: 544px;
-  }
-  main .list-content .task-section .container {
+  main .list-content .container {
     width: 544px;
   }
 }
