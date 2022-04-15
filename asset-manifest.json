@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/To-Do-List-with-React/static/css/main.8a37df45.css",
-    "main.js": "/To-Do-List-with-React/static/js/main.1983862b.js",
+    "main.css": "/To-Do-List-with-React/static/css/main.eda98a7e.css",
+    "main.js": "/To-Do-List-with-React/static/js/main.6081fc91.js",
     "index.html": "/To-Do-List-with-React/index.html",
     "static/media/icon-sun.svg": "/To-Do-List-with-React/static/media/icon-sun.618d2bce8539369b315c.svg",
     "static/media/icon-trash-can.svg": "/To-Do-List-with-React/static/media/icon-trash-can.c457c815b22fc3326c6f.svg",
@@ -12,11 +12,11 @@
     "static/media/icon-white-star.svg": "/To-Do-List-with-React/static/media/icon-white-star.257659aec24cdd254e7c.svg",
     "static/media/icon-moon.svg": "/To-Do-List-with-React/static/media/icon-moon.c07b54be1130c65c0f57.svg",
     "static/media/icon-white-plus.svg": "/To-Do-List-with-React/static/media/icon-white-plus.44072c9ef130616dc05b.svg",
-    "main.8a37df45.css.map": "/To-Do-List-with-React/static/css/main.8a37df45.css.map",
-    "main.1983862b.js.map": "/To-Do-List-with-React/static/js/main.1983862b.js.map"
+    "main.eda98a7e.css.map": "/To-Do-List-with-React/static/css/main.eda98a7e.css.map",
+    "main.6081fc91.js.map": "/To-Do-List-with-React/static/js/main.6081fc91.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a37df45.css",
-    "static/js/main.1983862b.js"
+    "static/css/main.eda98a7e.css",
+    "static/js/main.6081fc91.js"
   ]
 }
