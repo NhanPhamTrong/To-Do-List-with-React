@@ -1,7 +1,6 @@
 main {
-    min-height: auto;
+    min-height: 100vh;
     padding: 7.5rem 0;
-    color: $dark-word-color-1;
 
     .list-content {
         display: none;
@@ -67,15 +66,10 @@ main {
                     input {
                         width: 100%;
                         padding: 1rem 0 1rem 3.5rem;
-                        background-color: $dark-input-background;
                         border: none;
                         border-radius: 5px;
                         font-size: 1rem;
                         outline: none;
-                    }
-
-                    input::placeholder {
-                        color: $dark-word-color-1;
                     }
                 }
             }
@@ -88,8 +82,6 @@ main {
                 ul {
                     li {
                         min-height: 58px;
-                        background-color: $dark-task-background;
-                        border: $dark-task-border solid 1px;
                         display: grid;
                         grid-template-columns: auto 1fr;
 
@@ -104,8 +96,6 @@ main {
                             content: "";
                             height: 20px;
                             width: 20px;
-                            background-color: $dark-checkbox-background;
-                            border: $dark-checkbox-border solid 2px;
                             border-radius: 100px;
                             position: absolute;
                             top: 50%;
@@ -129,7 +119,6 @@ main {
                                 height: 100%;
                                 width: 100%;
                                 padding: 1rem 0;
-                                background-color: $dark-task-background;
                                 border: none;
                                 display: none;
                                 font-size: 16px;
@@ -175,10 +164,6 @@ main {
                     }
 
                     li:hover {
-                        .checkbox:before {
-                            border: $dark-checkbox-border-hover solid 2px;
-                        }
-
                         .task-text {
                             p {
                                 padding-right: 0;
@@ -192,9 +177,10 @@ main {
                     }
 
                     li.completed {
-                        .checkbox:before {
-                            background-color: $dark-checkbox-background-complete;
-                            border: $dark-checkbox-border-hover solid 2px;
+                        .task-text {
+                            p {
+                                text-decoration: line-through;
+                            }
                         }
                     }
                 }
@@ -204,8 +190,6 @@ main {
         .list-statistic {
             .container {
                 padding: 1rem 2rem;
-                background-color: $dark-statistic-background;
-                border: $dark-statistic-border solid 1px;
                 border-radius: 0 0 5px 5px;
 
                 button {
@@ -213,18 +197,9 @@ main {
                     border: none;
                 }
 
-                button:hover, button.active {
-                    color: $dark-sort-btn;
-                }
-
                 .sort {
                     width: 16rem;
-                    margin: 0 auto 2rem;
-                    display: flex;
-                    justify-content: space-between;
-                }
-    
-                .count-and-clear {
+                    margin: 0 auto 1.5rem;
                     display: flex;
                     justify-content: space-between;
                 }
@@ -234,6 +209,166 @@ main {
 
     .list-content.open {
         display: block;
+    }
+}
+
+main.dark {
+    color: $dark-word-color-1;
+
+    .list-content {
+        .add-task {
+            .container {
+                .input-task {
+                    box-shadow: 0 10px 15px 0 black;
+
+                    input {
+                        background-color: $dark-input-background;
+                    }
+
+                    input::placeholder {
+                        color: $dark-word-color-1;
+                    }
+                }
+            }
+        }
+
+        .task-section {
+            .container {
+                ul {
+                    box-shadow: 0 10px 15px 0 black;
+
+                    li {
+                        background-color: $dark-task-background;
+                        border: $dark-task-border solid 1px;
+
+                        .checkbox:before {
+                            background-color: $dark-checkbox-background;
+                            border: $dark-checkbox-border solid 1px;
+                        }
+
+                        .task-text {
+                            input {
+                                background-color: $dark-task-background;
+                            }
+                        }
+                    }
+
+                    li:hover {
+                        .checkbox:before {
+                            border: $dark-checkbox-border-hover solid 1px;
+                        }
+                    }
+
+                    li.completed {
+                        .checkbox:before {
+                            background-image: url("../images/icon-check.svg"), $dark-checkbox-background-complete;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 50%, 100%;
+                            border: $dark-checkbox-border-hover solid 1px;
+                        }
+
+                        .task-text {
+                            p {
+                                color: $dark-word-color-2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .list-statistic {
+            .container {
+                background-color: $dark-statistic-background;
+                border: $dark-statistic-border solid 1px;
+                box-shadow: 0 10px 15px 0 black;
+
+                button:hover, button.active {
+                    color: $dark-sort-btn;
+                }
+            }
+        }
+    }
+}
+
+main.light {
+    color: $light-word-color-1;
+
+    .list-content {
+        .add-task {
+            .container {
+                .input-task {
+                    box-shadow: 0 10px 15px 0 grey;
+
+                    input {
+                        background-color: $light-input-background;
+                    }
+
+                    input::placeholder {
+                        color: $light-word-color-1;
+                    }
+                }
+            }
+        }
+
+        .task-section {
+            .container {
+                ul {
+                    box-shadow: 0 10px 15px 0 grey;
+
+                    li {
+                        background-color: $light-task-background;
+                        border: $light-task-border solid 1px;
+
+                        .checkbox:before {
+                            background-color: $light-checkbox-background;
+                            border: $light-checkbox-border solid 1px;
+                        }
+
+                        .task-text {
+                            input {
+                                background-color: $light-task-background;
+                            }
+                        }
+                    }
+
+                    li:hover {
+                        .checkbox:before {
+                            border: $light-checkbox-border-hover solid 1px;
+                        }
+                    }
+
+                    li.completed {
+                        .checkbox:before {
+                            background-image: url("../images/icon-check.svg"), $light-checkbox-background-complete;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 50%, 100%;
+                            border: $light-checkbox-border-hover solid 1px;
+                        }
+
+                        .task-text {
+                            p {
+                                color: $light-word-color-2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .list-statistic {
+            .container {
+                background-color: $light-statistic-background;
+                border: $light-statistic-border solid 1px;
+                box-shadow: 0 10px 15px 0 grey;
+
+                button:hover, button.active {
+                    color: $light-sort-btn;
+                }
+            }
+        }
     }
 }
 

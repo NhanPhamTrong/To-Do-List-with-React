@@ -18,7 +18,6 @@
 nav {
     height: 5rem;
     width: 100%;
-    background-image: $dark-navbar-background;
     position: fixed;
     z-index: 10;
 
@@ -50,7 +49,6 @@ nav {
         min-height: calc(100vh - 5rem);
         width: 100%;
         padding-top: 1.25rem;
-        background-color: $dark-menu-background;
         position: absolute;
         left: -100%;
         top: 5rem;
@@ -64,20 +62,14 @@ nav {
             button {
                 width: 30%;
                 padding: 0.75rem 0;
-                background-color: $dark-add-list-btn-background;
                 border: none;
-            }
-    
-            button:hover {
-                background-color: transparent;
-                background-image: $dark-add-list-btn-background-hover;
             }
     
             input {
                 width: 70%;
                 padding: 0.75rem 1.75rem;
                 border: none;
-                color: $dark-word-color-2 !important;
+                color: $add-list-input;
                 outline: none;
             }
         }
@@ -90,7 +82,6 @@ nav {
                 a {
                     height: 100%;
                     padding: 1rem 0 1rem 5rem;
-                    color: $dark-word-color-1;
                     display: block;
                     position: relative;
 
@@ -109,16 +100,74 @@ nav {
                     }
                 }
             }
-
-            li:hover {
-                background-color: $dark-menu-list-background-hover;
-            }
         }
     }
 
     #menu.active {
         left: 0;
         transition: 0.4s;
+    }
+}
+
+nav.dark {
+    background-image: $dark-navbar-background;
+
+    #menu {
+        background-color: $dark-menu-background;
+
+        .input-list {
+            button {
+                background-color: $dark-add-list-btn-background;
+            }
+
+            button:hover {
+                background-color: transparent;
+                background-image: $dark-add-list-btn-background-hover;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: $dark-word-color-1;
+                }
+            }
+
+            li:hover {
+                background-color: $dark-menu-list-background-hover;
+            }
+        }
+    }
+}
+
+nav.light {
+    background-image: $light-navbar-background;
+
+    #menu {
+        background-color: $light-menu-background;
+
+        .input-list {
+            button {
+                background-color: $light-add-list-btn-background;
+            }
+
+            button:hover {
+                background-color: transparent;
+                background-image: $light-add-list-btn-background-hover;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: $light-word-color-1;
+                }
+            }
+
+            li:hover {
+                background-color: $light-menu-list-background-hover;
+            }
+        }
     }
 }
 

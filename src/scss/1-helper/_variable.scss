@@ -8,6 +8,7 @@
 // Colors
 $bookmark-btn-background-active: rgb(255, 255, 0);
 $delete-list-btn-background: rgb(255, 0, 0);
+$add-list-input: rgb(0, 0, 0);
 
 // Dark theme
 $dark-add-list-btn-background: rgb(43, 25, 161);
@@ -15,7 +16,7 @@ $dark-add-list-btn-background-hover: linear-gradient(to left, rgb(43, 25, 161), 
 $dark-body-background: rgb(22, 22, 34);
 $dark-checkbox-background: rgb(190, 190, 190);
 $dark-checkbox-border: rgb(70, 70, 70);
-$dark-checkbox-background-complete: rgb(43, 25, 161);
+$dark-checkbox-background-complete: linear-gradient(135deg, rgb(43, 25, 161), rgb(110, 26, 122));
 $dark-checkbox-border-hover: rgb(0, 240, 240);
 $dark-input-background: rgb(35, 40, 60);
 $dark-menu-background: rgb(0, 0, 0);
@@ -27,6 +28,24 @@ $dark-sort-btn: rgb(0, 240, 240);
 $dark-task-background: rgb(35, 40, 60);
 $dark-task-border: rgb(70, 70, 70);
 $dark-word-color-1: rgb(255, 255, 255);
-$dark-word-color-2: rgb(0, 0, 0);
+$dark-word-color-2: rgb(135, 135, 135);
 
 // Light theme
+$light-add-list-btn-background: rgb(212, 230, 94);
+$light-add-list-btn-background-hover: linear-gradient(to left, rgb(212, 230, 94), rgb(145, 229, 133));
+$light-body-background: rgb(233, 233, 221);
+$light-checkbox-background: rgb(65, 65, 65);
+$light-checkbox-border: rgb(185, 185, 185);
+$light-checkbox-background-complete: linear-gradient(135deg, rgb(212, 230, 94), rgb(145, 229, 133));
+$light-checkbox-border-hover: rgb(255, 15, 15);
+$light-input-background: rgb(220, 215, 195);
+$light-menu-background: rgb(255, 255, 255);
+$light-menu-list-background-hover: rgb(215, 215, 215);
+$light-navbar-background: linear-gradient(to right, rgb(212, 230, 94), rgb(145, 229, 133));
+$light-statistic-background: rgb(220, 215, 195);
+$light-statistic-border: rgb(185, 185, 185);
+$light-sort-btn: rgb(255, 15, 15);
+$light-task-background: rgb(220, 215, 195);
+$light-task-border: rgb(185, 185, 185);
+$light-word-color-1: rgb(0, 0, 0);
+$light-word-color-2: rgb(120, 120, 120);

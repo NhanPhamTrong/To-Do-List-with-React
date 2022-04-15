@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/main.css";
 import ListContent from "./Body/ListContent";
 import InputList from "./Navbar/InputList";
@@ -21,6 +21,10 @@ function App() {
     function ClickChangeTheme(e) {
         setTheme(e.target.classList.contains("dark") ? "light" : "dark");
     }
+
+    useEffect(() => {
+        document.body.classList = theme === "dark" ? "dark" : "light";
+    },[theme]);
 
     function AddList(listInputText) {
         setList(prevValue => {
@@ -57,7 +61,6 @@ function App() {
                 openList: prevValue.openList
             }
         });
-        setActive("");
     }
 
     function BookmarkList(id) {
@@ -81,7 +84,7 @@ function App() {
     return (
         <>
             <button className={"menu-toggler " + active} onClick={ClickMenuToggler} type="button" aria-label="Menu Toggler"></button>
-            <nav className={active}>
+            <nav className={active + " " + theme}>
                 <div className="container">
                     <button className={"change-theme " + theme} onClick={ClickChangeTheme} type="button" aria-label="Menu Toggler"></button>
                 </div>
@@ -98,7 +101,7 @@ function App() {
                     </ul>
                 </div>
             </nav>
-            <main>
+            <main className={theme}>
                 {list.listName.map((e, index) => {
                     return <ListContent key={index} id={index} open={list.openList[index]} onBookmark={BookmarkList} active={bookmark[index]} onDelete={DeleteList} listName={e} />
                 })}
