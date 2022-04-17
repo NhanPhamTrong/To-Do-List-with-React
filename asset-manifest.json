@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/To-Do-List-with-React/static/css/main.179a4163.css",
+    "main.css": "/To-Do-List-with-React/static/css/main.9ad0dbfc.css",
     "main.js": "/To-Do-List-with-React/static/js/main.d16a256e.js",
     "index.html": "/To-Do-List-with-React/index.html",
     "static/media/icon-sun.svg": "/To-Do-List-with-React/static/media/icon-sun.618d2bce8539369b315c.svg",
@@ -13,11 +13,11 @@
     "static/media/icon-moon.svg": "/To-Do-List-with-React/static/media/icon-moon.c07b54be1130c65c0f57.svg",
     "static/media/icon-check.svg": "/To-Do-List-with-React/static/media/icon-check.e7592c5700cf58de9fea.svg",
     "static/media/icon-white-plus.svg": "/To-Do-List-with-React/static/media/icon-white-plus.44072c9ef130616dc05b.svg",
-    "main.179a4163.css.map": "/To-Do-List-with-React/static/css/main.179a4163.css.map",
+    "main.9ad0dbfc.css.map": "/To-Do-List-with-React/static/css/main.9ad0dbfc.css.map",
     "main.d16a256e.js.map": "/To-Do-List-with-React/static/js/main.d16a256e.js.map"
   },
   "entrypoints": [
-    "static/css/main.179a4163.css",
+    "static/css/main.9ad0dbfc.css",
     "static/js/main.d16a256e.js"
   ]
 }
