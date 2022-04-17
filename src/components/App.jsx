@@ -24,7 +24,7 @@ function App() {
 
     useEffect(() => {
         document.body.classList = theme === "dark" ? "dark" : "light";
-    },[theme]);
+    }, [theme]);
 
     function AddList(listInputText) {
         setList(prevValue => {
