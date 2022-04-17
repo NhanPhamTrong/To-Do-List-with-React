@@ -410,7 +410,9 @@ main .list-content .task-section .container ul li .task-text.edit input {
 main .list-content .task-section .container ul li .task-btn {
   -ms-grid-column: 3;
   grid-column: 3;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -440,12 +442,6 @@ main .list-content .task-section .container ul li:nth-child(1) {
 main .list-content .task-section .container ul li:hover .task-text p {
   padding-right: 0;
   white-space: normal;
-}
-
-main .list-content .task-section .container ul li:hover .task-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 main .list-content .task-section .container ul li.completed .task-text p {
@@ -635,6 +631,14 @@ main.light .list-content .list-statistic .container button:hover, main.light .li
   }
   main .list-content .container {
     width: 544px;
+  }
+  main .list-content .task-section .container ul li .task-btn {
+    display: none;
+  }
+  main .list-content .task-section .container ul li:hover .task-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 /*# sourceMappingURL=main.css.map */
