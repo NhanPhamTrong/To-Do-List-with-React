@@ -1,17 +1,18 @@
 .menu-toggler {
-    height: 30px;
-    width: 30px;
-    background: url("../images/icon-menu-toggler.svg") no-repeat center;
-    background-size: contain;
+    height: 40px;
+    width: 40px;
+    background: rgb(43, 25, 161) url("../images/icon-menu-toggler.svg") no-repeat center;
+    background-size: 60%;
     border: none;
+    border-radius: 10px;
     position: fixed;
-    left: 25px;
-    top: 25px;
+    left: 20px;
+    top: 20px;
     z-index: 20;
 }
 
 .menu-toggler.active {
-    background: url("../images/icon-close.svg") no-repeat center;
+    background: rgb(43, 25, 161) url("../images/icon-close.svg") no-repeat center;
     background-size: contain;
 }
 
@@ -63,6 +64,7 @@ nav {
                 width: 30%;
                 padding: 0.75rem 0;
                 border: none;
+                color: $dark-word-color-1;
             }
     
             input {
@@ -76,7 +78,9 @@ nav {
 
         ul {
             max-height: 75vh;
-            overflow-y: auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
 
             li {
                 a {

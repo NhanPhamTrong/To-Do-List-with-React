@@ -8,10 +8,6 @@ body .container {
   margin: 0 auto;
 }
 
-body button, body input {
-  font-family: 'Poppins', sans-serif;
-}
-
 body.dark {
   background-color: #161622;
 }
@@ -51,34 +47,52 @@ body.light button, body.light input {
 * {
   margin: 0;
   padding: 0;
+}
+
+*, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  list-style: none;
+}
+
+body {
+  line-height: 1.5rem;
+}
+
+a, a:active {
   text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
 }
 
 button {
   cursor: pointer;
 }
 
-p {
-  line-height: 1.5rem;
+input, button {
+  font: inherit;
+}
+
+ol, ul {
+  list-style: none;
 }
 
 .menu-toggler {
-  height: 30px;
-  width: 30px;
-  background: url("../images/icon-menu-toggler.svg") no-repeat center;
-  background-size: contain;
+  height: 40px;
+  width: 40px;
+  background: #2b19a1 url("../images/icon-menu-toggler.svg") no-repeat center;
+  background-size: 60%;
   border: none;
+  border-radius: 10px;
   position: fixed;
-  left: 25px;
-  top: 25px;
+  left: 20px;
+  top: 20px;
   z-index: 20;
 }
 
 .menu-toggler.active {
-  background: url("../images/icon-close.svg") no-repeat center;
+  background: #2b19a1 url("../images/icon-close.svg") no-repeat center;
   background-size: contain;
 }
 
@@ -136,6 +150,7 @@ nav #menu .input-list button {
   width: 30%;
   padding: 0.75rem 0;
   border: none;
+  color: white;
 }
 
 nav #menu .input-list input {
@@ -148,7 +163,9 @@ nav #menu .input-list input {
 
 nav #menu ul {
   max-height: 75vh;
-  overflow-y: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 nav #menu ul li a {
@@ -207,22 +224,22 @@ nav.dark #menu ul li:hover {
 }
 
 nav.light {
-  background-image: -webkit-gradient(linear, left top, right top, from(#d4e65e), to(#91e585));
-  background-image: linear-gradient(to right, #d4e65e, #91e585);
+  background-image: -webkit-gradient(linear, left top, right top, from(#2b19a1), to(#6e1a7a));
+  background-image: linear-gradient(to right, #2b19a1, #6e1a7a);
 }
 
 nav.light #menu {
-  background-color: white;
+  background-color: #d7d7d7;
 }
 
 nav.light #menu .input-list button {
-  background-color: #d4e65e;
+  background-color: #2b19a1;
 }
 
 nav.light #menu .input-list button:hover {
   background-color: transparent;
-  background-image: -webkit-gradient(linear, right top, left top, from(#d4e65e), to(#91e585));
-  background-image: linear-gradient(to left, #d4e65e, #91e585);
+  background-image: -webkit-gradient(linear, right top, left top, from(#2b19a1), to(#6e1a7a));
+  background-image: linear-gradient(to left, #2b19a1, #6e1a7a);
 }
 
 nav.light #menu ul li a {
@@ -230,7 +247,7 @@ nav.light #menu ul li a {
 }
 
 nav.light #menu ul li:hover {
-  background-color: #d7d7d7;
+  background-color: #afafaf;
 }
 
 @media only screen and (min-width: 992px) {
@@ -305,7 +322,7 @@ main .list-content .add-task .container .heading .tool button {
 }
 
 main .list-content .add-task .container .heading .tool .bookmark {
-  background: transparent url("../images/icon-white-star.svg") no-repeat center;
+  background: transparent url("../images/icon-yellow-star.svg") no-repeat center;
   background-size: 70%;
 }
 
@@ -456,6 +473,14 @@ main .list-content .list-statistic .container {
 main .list-content .list-statistic .container button {
   background-color: transparent;
   border: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+main .list-content .list-statistic .container button:hover {
+  font-size: 18px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 main .list-content .list-statistic .container .sort {
@@ -601,7 +626,7 @@ main.light .list-content .task-section .container ul li:hover .checkbox:before {
 }
 
 main.light .list-content .task-section .container ul li.completed .checkbox:before {
-  background-image: url("../images/icon-check.svg"), linear-gradient(135deg, #d4e65e, #91e585);
+  background-image: url("../images/icon-check.svg"), linear-gradient(135deg, #2b19a1, #6e1a7a);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%, 100%;

@@ -32,7 +32,7 @@ main {
                         }
 
                         .bookmark {
-                            background: transparent url("../images/icon-white-star.svg") no-repeat center;
+                            background: transparent url("../images/icon-yellow-star.svg") no-repeat center;
                             background-size: 70%;
                         }
 
@@ -191,6 +191,12 @@ main {
                 button {
                     background-color: transparent;
                     border: none;
+                    transition: 0.2s;
+                }
+
+                button:hover {
+                    font-size: 18px;
+                    transition: 0.2s;
                 }
 
                 .sort {
