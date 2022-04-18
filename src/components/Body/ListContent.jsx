@@ -125,7 +125,7 @@ function ListContent(props) {
                             return <Task key={index} id={index} task={e} completed={task.completed[index]} display={task.display[index]} onUpdate={SubmitUpdate} onDelete={DeleteTask} onCheckCompleted={CheckCompleted} />
                         })}
                     </ul>
-                    <p className="count">{task.countActive + (task.countActive > 1 ? " active items left" : " active item left")}</p>
+                    <p className="count">{task.countActive + (task.countActive > 1 ? " active tasks left" : " active task left")}</p>
                 </div>
             </div>
             <ListStatistic onGetAll={GetAll} onGetCompleted={GetCompleted} onGetActive={GetActive} />
