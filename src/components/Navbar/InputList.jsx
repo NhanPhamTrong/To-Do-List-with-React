@@ -8,17 +8,21 @@ function InputList(props) {
         setList(newList);
     }
 
-    function AddList(e) {
+    function AddListOnClick() {
+        props.onAdd(list);
+        setList("");
+    }
+
+    function AddListOnEnter(e) {
         if (e.key === "Enter") {
-            props.onAdd(list);
-            setList("");
+            AddListOnClick();
         }
     }
 
     return (
         <div className="input-list">
-            <button type="button" aria-label="Add List">Add List</button>
-            <input type="text" onChange={HandleChange} onKeyDown={AddList} value={list} placeholder="List's name..." />
+            <button type="button" onClick={AddListOnClick} aria-label="Add List">Add List</button>
+            <input type="text" onChange={HandleChange} onKeyDown={AddListOnEnter} value={list} placeholder="List's name..." />
         </div>
     )
 }

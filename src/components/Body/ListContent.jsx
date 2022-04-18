@@ -125,9 +125,10 @@ function ListContent(props) {
                             return <Task key={index} id={index} task={e} completed={task.completed[index]} display={task.display[index]} onUpdate={SubmitUpdate} onDelete={DeleteTask} onCheckCompleted={CheckCompleted} />
                         })}
                     </ul>
+                    <p className="count">{task.countActive + (task.countActive > 1 ? " active items left" : " active item left")}</p>
                 </div>
             </div>
-            <ListStatistic count={task.countActive} onGetAll={GetAll} onGetCompleted={GetCompleted} onGetActive={GetActive} />
+            <ListStatistic onGetAll={GetAll} onGetCompleted={GetCompleted} onGetActive={GetActive} />
         </div>
     );
 }

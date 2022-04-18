@@ -465,9 +465,14 @@ main .list-content .task-section .container ul li.completed .task-text p {
   text-decoration: line-through;
 }
 
-main .list-content .list-statistic .container {
-  padding: 1rem 2rem;
+main .list-content .task-section .container .count {
+  padding: 0.5rem 1rem;
   border-radius: 0 0 5px 5px;
+}
+
+main .list-content .list-statistic .container {
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 main .list-content .list-statistic .container button {
@@ -478,14 +483,15 @@ main .list-content .list-statistic .container button {
 }
 
 main .list-content .list-statistic .container button:hover {
-  font-size: 18px;
+  -webkit-transform: scale(1.15) translate(0);
+          transform: scale(1.15) translate(0);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
 main .list-content .list-statistic .container .sort {
   width: 16rem;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -527,7 +533,7 @@ main.dark .list-content .add-task .container .input-task input::placeholder {
   color: white;
 }
 
-main.dark .list-content .task-section .container ul {
+main.dark .list-content .task-section .container {
   -webkit-box-shadow: 0 10px 15px 0 black;
           box-shadow: 0 10px 15px 0 black;
 }
@@ -560,6 +566,11 @@ main.dark .list-content .task-section .container ul li.completed .checkbox:befor
 
 main.dark .list-content .task-section .container ul li.completed .task-text p {
   color: #878787;
+}
+
+main.dark .list-content .task-section .container .count {
+  background-color: #23283c;
+  border: #464646 solid 1px;
 }
 
 main.dark .list-content .list-statistic .container {
@@ -635,6 +646,11 @@ main.light .list-content .task-section .container ul li.completed .checkbox:befo
 
 main.light .list-content .task-section .container ul li.completed .task-text p {
   color: #787878;
+}
+
+main.light .list-content .task-section .container .count {
+  background-color: #dcd7c3;
+  border: #b9b9b9 solid 1px;
 }
 
 main.light .list-content .list-statistic .container {

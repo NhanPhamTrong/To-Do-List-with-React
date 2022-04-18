@@ -34,7 +34,6 @@ function ListStatistic(props) {
                     <button className={active[1]} onClick={GetCompleted} order="1" type="button" aria-label="Completed tasks">Completed</button>
                     <button className={active[2]} onClick={GetActive} order="2" type="button" aria-label="Active tasks">Active</button>
                 </div>
-                <p>{props.count + (props.count > 1 ? " items left" : " item left")}</p>
             </div>
         </div>
     )
